@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <button id="newnote">Create New Note</button>
+
+    <script type="text/javascript">
+
+        const ipcRenderer = require('electron').ipcRenderer;
+
+        const btnnewnote = document.getElementById('newnote');
+
+        btnnewnote.addEventListener('click', function(){
+            ipcRenderer.send('btnnewnoteclick');
+        });
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    Hello from newnote!
+
+    <textarea name="" id="textnote" cols="30" rows="10"></textarea>
+
+    <button id="savenote">Save Note</button>
+
+    <script type="text/javascript">
+
+        const ipcRenderer = require('electron').ipcRenderer;
+
+        const btnsave = document.getElementById('savenote');
+
+        btnsave.addEventListener('click', function(){
+            
+            let arg = document.getElementById('textnote').value;//TODO: SAVE
+            
+            ipcRenderer.send('btnsaveclick', arg);
+        
+        });
+
+    </script>
+    
+</body>
+</html>
+
+
